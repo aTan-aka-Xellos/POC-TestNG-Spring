@@ -1,33 +1,23 @@
 package com.gmail.xellos.aka.atan;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
-@ContextConfiguration(classes = AppConfig.class)
-public class BaseTest extends AbstractTestNGSpringContextTests {
-
-    @Autowired
-    ComponentFoo foo;
+public class BaseTest extends TestNGSpringTest {
 
     @BeforeSuite
-    public void setUpSuite() {
-        System.out.println("Suite:  " + foo);
+    public void setUpSuiteChild() {
+        System.out.println("Suite Child:  " + foo);
     }
 
     @BeforeTest
-    public void setUpTest() {
-        System.out.println("Test:   " + foo);
+    public void setUpTestChild() {
+        System.out.println("Test Child:   " + foo);
     }
 
     @BeforeMethod
-    public void setUpMethod() {
-        System.out.println("Method: " + foo);
+    public void setUpMethodChild() {
+        System.out.println("Method Child: " + foo);
     }
 
     @Test
