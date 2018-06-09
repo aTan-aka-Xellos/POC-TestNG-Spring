@@ -1,11 +1,12 @@
 package com.gmail.xellos.aka.atan;
 
-public class BeanBar {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
-    public BeanBar(String name) {
-        this.name = name;
-    }
+public class BeanWithStringProp {
 
+    @Autowired
+    @Qualifier("randomString")
     private String name;
 
     public String getName() {

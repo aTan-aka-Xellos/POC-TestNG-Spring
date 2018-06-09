@@ -9,7 +9,6 @@ import org.testng.annotations.*;
 @ContextConfiguration(classes = AppConfig.class)
 public class TestNGSpringTest extends AbstractTestNGSpringContextTests {
 
-
     @BeforeSuite(alwaysRun = true)
     @Override
     protected void springTestContextPrepareTestInstance() throws Exception {
@@ -20,31 +19,41 @@ public class TestNGSpringTest extends AbstractTestNGSpringContextTests {
     }
 
     @Autowired
-    ComponentFoo foo;
+    SimpleComponent simpleComponent;
 
     @Autowired
-    BeanBar bar;
+    SimpleBean simpleBean;
+
+    @Autowired
+    BeanWithStringProp beanWithStringProp;
+
+    @Autowired
+    String randomString;
+
 
     @BeforeSuite
     public void xSetUpSuite() {
         System.out.println("Base Suite");
-        Assert.assertNotNull(foo);
-        Assert.assertNotNull(bar);
+        testBeans();
     }
 
 
     @BeforeTest
     public void setUpTest() {
         System.out.println("Base Test");
-        Assert.assertNotNull(foo);
-        Assert.assertNotNull(bar);
+        testBeans();
     }
 
     @BeforeMethod
     public void setUpMethod() {
         System.out.println("Base Method");
-        Assert.assertNotNull(foo);
-        Assert.assertNotNull(bar);
+        testBeans();
+    }
+
+    protected void testBeans() {
+        Assert.assertNotNull(simpleComponent);
+        Assert.assertNotNull(simpleBean);
+        Assert.assertNotNull(randomString);
     }
 
 }

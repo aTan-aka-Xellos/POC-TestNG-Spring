@@ -8,34 +8,45 @@ public class BaseTest extends TestNGSpringTest {
     @BeforeSuite
     public void setUpSuiteChild() {
         System.out.println("Child Suite");
-        Assert.assertNotNull(foo);
-        Assert.assertNotNull(bar);
+        testBeans();
     }
 
     @BeforeTest
     public void setUpTestChild() {
         System.out.println("Child Test");
-        Assert.assertNotNull(foo);
-        Assert.assertNotNull(bar);
+        testBeans();
     }
 
     @BeforeMethod
     public void setUpMethodChild() {
         System.out.println("Child Method");
-        Assert.assertNotNull(foo);
-        Assert.assertNotNull(bar);
+        testBeans();
     }
 
     @Test
     void testComponent() {
-        Assert.assertNotNull(foo);
-        Assert.assertNotNull(foo.getName());
+        Assert.assertNotNull(simpleComponent);
+        Assert.assertNotNull(simpleComponent.getName());
     }
 
     @Test
-    void testCBean() {
-        Assert.assertNotNull(bar);
-        Assert.assertNotNull(bar.getName());
+    void testSimpleBean() {
+        Assert.assertNotNull(simpleBean);
+        Assert.assertNotNull(simpleBean.getName());
+    }
+
+    @Test
+    void testStringProperty() {
+        Assert.assertNotNull(randomString);
+        Assert.assertFalse(randomString.isEmpty());
+    }
+
+    @Test
+    void testBeanWithStringProp() {
+        Assert.assertNotNull(beanWithStringProp);
+        Assert.assertFalse(randomString.isEmpty());
+        Assert.assertEquals(beanWithStringProp.getName(), randomString);
+
     }
 
 }

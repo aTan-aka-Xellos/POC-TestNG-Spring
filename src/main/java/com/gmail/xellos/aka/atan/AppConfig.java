@@ -9,7 +9,12 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
 
     @Bean
-    public static BeanBar getBeanBar() {
-        return new BeanBar("This is a BeanBar");
+    public static SimpleBean getBeanBar() {
+        return new SimpleBean("This is a SimpleBean");
+    }
+
+    @Bean
+    public static BeanWithStringProp getBeanWithString() {
+        return new BeanWithStringProp();
     }
 }
