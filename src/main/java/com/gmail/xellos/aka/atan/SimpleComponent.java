@@ -7,7 +7,7 @@ public class SimpleComponent {
 
     public SimpleComponent() {
         System.out.println("Create SimpleComponent");
-        name = "This is a ComponentFoo";
+        name = "This is a SimpleComponent";
     }
 
     private String name;

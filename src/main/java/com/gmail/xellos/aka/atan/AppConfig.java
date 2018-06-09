@@ -1,5 +1,7 @@
 package com.gmail.xellos.aka.atan;
 
+import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -26,12 +28,12 @@ public class AppConfig {
 
     @Bean
     public static BeanToStoreString getBeanStoreString() {
-        return new BeanToStoreString(RandomStringUtils.randomAlphabetic(10));
+        return new BeanToStoreString(randomAlphabetic(10));
     }
 
     @Bean(name = "randomString")
     public static String generateString() {
-        return RandomStringUtils.randomAlphabetic(10);
+        return randomAlphabetic(10);
     }
 
 }

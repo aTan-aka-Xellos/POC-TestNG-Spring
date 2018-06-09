@@ -1,5 +1,6 @@
 package com.gmail.xellos.aka.atan;
 
+import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
 import static org.testng.Assert.assertNotNull;
 
 import org.apache.commons.lang3.RandomStringUtils;
@@ -72,7 +73,7 @@ public class TestNGSpringTest extends AbstractTestNGSpringContextTests {
     }
 
     void refreshBeanToStoreString() {
-        beanWithProp.getBeanToStoreString().setString(RandomStringUtils.randomAlphabetic(5));
+        beanWithProp.getBeanToStoreString().setString(randomAlphabetic(5));
     }
 
     void checkBeans() {

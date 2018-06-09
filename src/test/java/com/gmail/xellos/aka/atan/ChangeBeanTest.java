@@ -30,8 +30,8 @@ public class ChangeBeanTest extends TestNGSpringTest {
         System.out.println("randomStringProp: " + beanWithProp.getRandomString());
         System.out.println("withProp:         " + beanWithProp.getBeanToStoreString().getString());
 
-        System.out.println("withProp:     " + beanWithProp    .getBeanToStoreString().getString());
-        System.out.println("withPropCopy: " + beanWithPropCopy.getBeanToStoreString().getString());
+        System.out.println("withProp:         " + beanWithProp    .getBeanToStoreString().getString());
+        System.out.println("withPropCopy:     " + beanWithPropCopy.getBeanToStoreString().getString());
         System.out.println();
 
         assertNotEquals(beanWithPropCopy.getBeanToStoreString().getString(), randomString);
