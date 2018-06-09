@@ -7,24 +7,35 @@ public class BaseTest extends TestNGSpringTest {
 
     @BeforeSuite
     public void setUpSuiteChild() {
-        System.out.println("Suite Child:  " + foo);
+        System.out.println("Child Suite");
+        Assert.assertNotNull(foo);
+        Assert.assertNotNull(bar);
     }
 
     @BeforeTest
     public void setUpTestChild() {
-        System.out.println("Test Child:   " + foo);
+        System.out.println("Child Test");
+        Assert.assertNotNull(foo);
+        Assert.assertNotNull(bar);
     }
 
     @BeforeMethod
     public void setUpMethodChild() {
-        System.out.println("Method Child: " + foo);
+        System.out.println("Child Method");
+        Assert.assertNotNull(foo);
+        Assert.assertNotNull(bar);
     }
 
     @Test
-    void testSpring() {
-
+    void testComponent() {
         Assert.assertNotNull(foo);
-        Assert.assertTrue(foo.returnTrue());
+        Assert.assertNotNull(foo.getName());
+    }
+
+    @Test
+    void testCBean() {
+        Assert.assertNotNull(bar);
+        Assert.assertNotNull(bar.getName());
     }
 
 }
