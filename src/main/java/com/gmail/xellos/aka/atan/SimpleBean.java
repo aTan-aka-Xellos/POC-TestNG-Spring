@@ -3,6 +3,7 @@ package com.gmail.xellos.aka.atan;
 public class SimpleBean {
 
     public SimpleBean(String name) {
+        System.out.println("Create SimpleBean with name: " + name);
         this.name = name;
     }
 
